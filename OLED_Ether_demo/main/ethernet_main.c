@@ -32,7 +32,7 @@
 #include "tcpip_adapter.h"
 #include "nvs_flash.h"
 #include "driver/gpio.h"
-#include "tlk110_phy.h"
+//#include "tlk110_phy.h"
 #include "driver/rtc_io.h"
 
 ///////////
@@ -106,7 +106,7 @@ eth_speed_mode_t phy_tlk110_get_speed_mode(void)
 eth_duplex_mode_t phy_tlk110_get_duplex_mode(void)
 {
     if((esp_eth_smi_read(PHY_STATUS_REG) & DUPLEX_STATUS ) == DUPLEX_STATUS) {
-        return ETH_MDOE_FULLDUPLEX;
+        return ETH_MODE_FULLDUPLEX;
     } else {
         return ETH_MODE_HALFDUPLEX;
     }
